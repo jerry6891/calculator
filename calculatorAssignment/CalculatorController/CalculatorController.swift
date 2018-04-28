@@ -24,11 +24,12 @@ class CalculatorController: UIViewController {
             numberOnScreen = Double(label.text!)!
             performingMath = false
         } else {
-        label.text = label.text! + String(sender.tag-1)
+            label.text = label.text! + String(sender.tag-1)
             runningNumber = "\(sender.tag-1)"
-            label.text = runningNumber
-        // Numbers displayed on screen.
-        numberOnScreen = Double(label.text!)!
+            runningNumber = label.text!
+            // label.text = label.text
+            // Numbers displayed on screen.
+            numberOnScreen = Double(label.text!)!
         }
     }
     @IBAction func buttons(_ sender: UIButton) {
@@ -66,16 +67,13 @@ class CalculatorController: UIViewController {
             operation = 0
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        label.text = "0"
+        // label.text = "0"
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
